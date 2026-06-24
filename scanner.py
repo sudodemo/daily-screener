@@ -3,8 +3,11 @@ import time, json, os, requests, datetime
 
 # ================= CONFIG =================
 SCANNERS = {
-    "Buy Cross": "https://chartink.com/screener/sandeepm-daily-bullish-crossover-cash",
-    "Sell Cross": "https://chartink.com/screener/sandeepm-daily-bearish-crossover-cash-2"
+    "Daily Candle Buy Stocks": "https://chartink.com/screener/sandeepm-daily-bullish-crossover-cash",
+    "Daily Candle Sell Stocks": "https://chartink.com/screener/sandeepm-daily-bearish-crossover-cash-2",
+    "Weekly Candle Buy Stocks": "https://chartink.com/screener/sandeepm-weekly-bullish-crossover-1",
+    "Monthly Candle Buy Stocks": "https://chartink.com/screener/sandeepm-monthly-bullish-crossover",
+    "Quarterly Candle Buy Stocks": "https://chartink.com/screener/sm-quarterly-crossover-5-10-20-ema-crossover-check-every-quarter-end"
 }
 
 DATA_FILE = "seen_stocks.json"
@@ -192,7 +195,7 @@ def run():
         send_telegram(f"🛑 Bot paused - {reason}")
         return
     
-    send_telegram("🤖 Chartink Bot started (GitHub Actions)")
+    send_telegram("🤖 Alerts started")
 
     seen = load_seen()
     first_run = True
