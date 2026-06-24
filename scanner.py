@@ -177,7 +177,7 @@ def fetch_all_scanners(browser):
 # ===== MAIN BOT =====
 def run():
     print("=" * 60)
-    print("🚀 CHARTINK BOT STARTED")
+    print("🚀 ALERTS STARTED")
     now = datetime.datetime.now()
     ist_time = now + datetime.timedelta(hours=5, minutes=30)
     print(f"⏰ UTC Time: {now}")
@@ -192,7 +192,7 @@ def run():
     
     if not is_open:
         print(f"🛑 Stopping bot - {reason}")
-        send_telegram(f"🛑 Bot paused - {reason}")
+        send_telegram(f"🛑 Alerts paused - {reason}")
         return
     
     send_telegram("🤖 Alerts started")
@@ -243,7 +243,7 @@ def run():
 
         except Exception as e:
             print(f"🔥 Error: {e}")
-            send_telegram(f"🔥 Bot Error: {str(e)}")
+            send_telegram(f"🔥 Error: {str(e)}")
             import traceback
             traceback.print_exc()
 
