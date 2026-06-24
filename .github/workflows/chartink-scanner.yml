@@ -8,11 +8,14 @@ on:
 jobs:
   scan:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      
     steps:
       - name: Checkout code
         uses: actions/checkout@v4.2.0
         with:
-          token: ${{ github.token }}
+          fetch-depth: 0
       
       - name: Setup Python 3.11
         uses: actions/setup-python@v5.2.0
@@ -31,11 +34,15 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
         run: python scanner.py
       
-      - name: Commit changes
+      - name: Commit and push changes
+        if: always()
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action Bot"
           git add -A
-          git diff --quiet && git diff --staged --quiet || git commit -m "Update seen_stocks.json"
-          git push origin main || echo "Nothing to push"
-        continue-on-error: true
+          if git diff --quiet --cached; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update seen_stocks.json - $(date '+%Y-%m-%d %H:%M:%S')"
+            git push origin main
+          fi
