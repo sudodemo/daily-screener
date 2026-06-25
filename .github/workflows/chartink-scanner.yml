@@ -2,14 +2,12 @@ name: Chartink Scanner Bot
 
 on:
   schedule:
-    # Runs every 15 minutes during the 9:00 AM IST hour (starting at 9:30 AM IST / 4:30 AM UTC)
-    - cron: '30,45 4 * * *'
-    # Runs every 15 minutes from 10:00 AM IST to 3:30 PM IST (5:00 AM to 10:00 AM UTC)
-    - cron: '0,15,30,45 5-9 * * *'
-    # Runs at exactly 3:00 PM and 3:15 PM and 3:30 PM IST (10:00, 10:15, 10:30 UTC)
-    - cron: '0,15,30 10 * * *'
+    # Shifted by 3 minutes to beat the peak queue traffic
+    - cron: '33,48 4 * * *'
+    - cron: '3,18,33,48 5-9 * * *'
+    - cron: '3,18,33 10 * * *'
   workflow_dispatch:
-
+ 
 jobs:
   scan:
     runs-on: ubuntu-latest
