@@ -46,6 +46,7 @@ jobs:
           if git diff --quiet --cached; then
             echo "No changes to commit"
           else
+            git pull --rebase origin main
             git commit -m "Update seen_stocks.json - $(date '+%Y-%m-%d %H:%M:%S')"
             git push origin main
           fi
