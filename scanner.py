@@ -6,7 +6,7 @@ SCANNERS = {
     "Daily Bullish Stocks to Buy": "https://chartink.com/screener/sandeepm-daily-bullish-crossover-cash",
     "Daily Bearish Stocks to Sell": "https://chartink.com/screener/sandeepm-daily-bearish-crossover-cash-2",
     "Weekly Bullish Stocks to Buy": "https://chartink.com/screener/sandeepm-weekly-bullish-crossover-1",
-    "Weekly Bearish Stocks to Sell": "https://chartink.com/screener/sandeepm-weekly-bearish-crossover-indices"
+    "Weekly Bearish Stocks to Sell": "https://chartink.com/screener/sandeepm-weekly-bearish-crossover-indices",
     "Monthly Bullish Stocks to Buy": "https://chartink.com/screener/sandeepm-monthly-bullish-crossover",
     "Quarterly Bullish Stocks to Buy": "https://chartink.com/screener/sm-quarterly-crossover-5-10-20-ema-crossover-check-every-quarter-end"
 }
