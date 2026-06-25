@@ -2,10 +2,7 @@ name: Chartink Scanner Bot
 
 on:
   schedule:
-    # Shifted by 3 minutes to beat the peak queue traffic
-    - cron: '33,48 4 * * *'
-    - cron: '3,18,33,48 5-9 * * *'
-    - cron: '3,18,33 10 * * *'
+        - cron: '30 4-10 * * *'
   workflow_dispatch:
  
 jobs:
