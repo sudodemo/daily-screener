@@ -1,7 +1,7 @@
 from playwright.sync_api import sync_playwright
 import time, json, os, requests, datetime
 
-# ================= CONFIG =================
+# ================= CONFIG ==================
 SCANNERS = {
     "Daily Bullish Stocks to Buy": "https://chartink.com/screener/sandeepm-daily-bullish-crossover-cash",
     "Daily Bearish Stocks to Sell": "https://chartink.com/screener/sandeepm-daily-bearish-crossover-cash-2",
